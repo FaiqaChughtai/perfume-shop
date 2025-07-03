@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPTILE EAU DE PARFUME - Luxury Fragrance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">REPTILE</a>
+            
+            <ul class="nav-menu">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#products"><i class="fas fa-spray-can"></i> Products</a></li>
+                <li><a href="#testimonials"><i class="fas fa-star"></i> Reviews</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Theme Dropdown -->
+                <div class="theme-dropdown">
+                    <button class="theme-btn" id="themeBtn">
+                        <i class="fas fa-palette"></i>
+                    </button>
+                    <div class="theme-menu" id="themeMenu">
+                        <div class="theme-option" data-theme="default">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #d4af37, #f4d03f);"></div>
+                            <span>Default Gold</span>
+                        </div>
+                        <div class="theme-option" data-theme="dark">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #1a1a1a, #333);"></div>
+                            <span>Dark Mode</span>
+                        </div>
+                        <div class="theme-option" data-theme="purple">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #6a0dad, #9370db);"></div>
+                            <span>Royal Purple</span>
+                        </div>
+                        <div class="theme-option" data-theme="ocean">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #006994, #00bcd4);"></div>
+                            <span>Ocean Blue</span>
+                        </div>
+                        <div class="theme-option" data-theme="sunset">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #ff6b35, #f7931e);"></div>
+                            <span>Sunset Orange</span>
+                        </div>
+                        <div class="theme-option" data-theme="forest">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #2e7d32, #66bb6a);"></div>
+                            <span>Forest Green</span>
+                        </div>
+                        <div class="theme-option" data-theme="rose">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #c2185b, #e91e63);"></div>
+                            <span>Rose Pink</span>
+                        </div>
+                        <div class="theme-option" data-theme="midnight">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #0d1421, #1565c0);"></div>
+                            <span>Midnight Blue</span>
+                        </div>
+                        <div class="theme-option" data-theme="neon">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #ff0080, #00ff80);"></div>
+                            <span>Neon Cyber</span>
+                        </div>
+                        <div class="theme-option" data-theme="vintage">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #8b4513, #daa520);"></div>
+                            <span>Vintage Brown</span>
+                        </div>
+                        <div class="theme-option" data-theme="cosmic">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #4a0e4e, #ff6b9d);"></div>
+                            <span>Cosmic Purple</span>
+                        </div>
+                        <div class="theme-option" data-theme="emerald">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #065f46, #10b981);"></div>
+                            <span>Emerald Green</span>
+                        </div>
+                        <div class="theme-option" data-theme="royal">
+                            <div class="theme-color" style="background: linear-gradient(45deg, #581c87, #a855f7);"></div>
+                            <span>Royal Violet</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="wishlist-btn" id="wishlistBtn">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count" id="wishlistCount">0</span>
+                </button>
+
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-content">
+            <button class="search-close" id="searchClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 style="margin-bottom: 1.5rem; color: var(--primary-color); text-align: center;">
+                <i class="fas fa-search"></i> Search Fragrances
+            </h3>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search for your perfect fragrance...">
+            <div id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <button class="sidebar-close" id="sidebarClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="sidebar-menu">
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#products"><i class="fas fa-spray-can"></i> Products</a></li>
+            <li><a href="#testimonials"><i class="fas fa-star"></i> Reviews</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay for expanded cards -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>REPTILE EAU DE PARFUME</h1>
+            <p>Unleash your wild side with our signature fragrance collection. Experience luxury that captivates and enchants every soul with unparalleled sophistication.</p>
+            <button class="cta-button" onclick="scrollToProducts()">
+                <i class="fas fa-gem"></i> Explore Collection
+            </button>
+        </div>
+    </section>
+
+    <!-- Trending Products -->
+    <section class="trending-products" id="products">
+        <div class="container">
+            <h2 class="section-title">Trending Fragrances</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">REPTILE EAU DE PARFUME is absolutely divine! The scent lasts all day and I receive compliments everywhere I go. It's become my signature fragrance and I can't imagine using anything else. The quality is exceptional!</p>
+                    <div class="testimonial-author">
+                        <img src="https://media.istockphoto.com/id/2175396731/photo/young-woman-smelling-perfume.webp?a=1&b=1&s=612x612&w=0&k=20&c=KO2RjHNZ9Ej29Povp0aj-XOXoM0X1H1lJ84vWkNJ1bg=" alt="Sarah Ahmed" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Sarah Ahmed</h4>
+                            <p>Fashion Blogger & Influencer</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">I've tried many luxury perfumes, but REPTILE stands out with its unique and sophisticated blend. The longevity is incredible and the sillage is perfect. Worth every penny and more! Absolutely recommended for special occasions.</p>
+                    <div class="testimonial-author">
+                        <img src="https://media.istockphoto.com/id/1430769618/photo/man-putting-on-perfume.webp?a=1&b=1&s=612x612&w=0&k=20&c=jAX9cKyTx_y2G9kpFwALnBIAqD89rn5CoY0oALPXRNw=" alt="Ali Hassan" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Ali Hassan</h4>
+                            <p>Business Executive</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The packaging is elegant and the fragrance is absolutely intoxicating. REPTILE has become my go-to gift for special occasions. Everyone who receives it falls in love instantly. The craftsmanship is truly remarkable!</p>
+                    <div class="testimonial-author">
+                        <img src="https://media.istockphoto.com/id/1574936466/photo/aroma-exploration.webp?a=1&b=1&s=612x612&w=0&k=20&c=RXarELb-V8MCPOMoNVg8eAHJc6y9Aauq5E6_2SIa_7w=" alt="Fatima Khan" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Fatima Khan</h4>
+                            <p>Interior Designer</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-gem"></i> REPTILE EAU DE PARFUME</h3>
+                <p><i class="fas fa-quote-left"></i> Luxury fragrances that define your essence. Experience the art of perfumery with our exclusive collection crafted for the sophisticated soul who appreciates true elegance.</p>
+                <p><i class="fas fa-award"></i> Award-winning fragrance house since 2020</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <a href="#home"><i class="fas fa-home"></i> Home</a>
+                <a href="#products"><i class="fas fa-spray-can"></i> Products</a>
+                <a href="#testimonials"><i class="fas fa-star"></i> Reviews</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="#"><i class="fas fa-shipping-fast"></i> Shipping Info</a>
+                <a href="#"><i class="fas fa-undo"></i> Returns</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-address-book"></i> Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                <p><i class="fas fa-envelope"></i> info@reptileparfume.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-8PM</p>
+                <p><i class="fas fa-whatsapp"></i> WhatsApp Support 24/7</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <p style="margin-bottom: 1.5rem;"><i class="fas fa-heart"></i> Join our fragrance community</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 REPTILE EAU DE PARFUME. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: var(--secondary-color);"></i> for fragrance lovers worldwide</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-cart"></i> Shopping Cart</h3>
+                <button class="cart-close" id="cartClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="cartItems">
+                <!-- Cart items will be displayed here -->
+            </div>
+            <div class="cart-total" id="cartTotal">
+                Total: PKR 0
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div class="wishlist-modal" id="wishlistModal">
+        <div class="wishlist-content">
+            <div class="cart-header">
+                <h3><i class="fas fa-heart"></i> My Wishlist</h3>
+                <button class="cart-close" id="wishlistClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="wishlistItems">
+                <!-- Wishlist items will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h3><i class="fas fa-credit-card"></i> Checkout</h3>
+                <button class="checkout-close" id="checkoutClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form class="checkout-form" id="checkoutForm">
+                <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Shipping Information</h4>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Street Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" id="postalCode" name="postalCode" required>
+                    </div>
+                </div>
+                
+                <h4 style="color: var(--primary-color); margin: 2rem 0 1rem;">Payment Information</h4>
+                
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod" name="paymentMethod" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="cod">Cash on Delivery</option>
+                        <option value="bank">Bank Transfer</option>
+                    </select>
+                </div>
+                
+                <div id="cardDetails" style="display: none;">
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Special Instructions (Optional)</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Any special delivery instructions..."></textarea>
+                </div>
+                
+                <div class="order-summary">
+                    <h4>Order Summary</h4>
+                    <div id="checkoutItems"></div>
+                    <div class="summary-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">PKR 0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping:</span>
+                        <span>PKR 500</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Tax:</span>
+                        <span id="tax">PKR 0</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="finalTotal">PKR 0</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="place-order-btn">
+                    <i class="fas fa-check-circle"></i> Place Order
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h3 id="successTitle">Success!</h3>
+        <p id="successMessage">Operation completed successfully.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
